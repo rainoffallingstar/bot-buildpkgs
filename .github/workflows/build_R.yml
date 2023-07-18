@@ -1,0 +1,25 @@
+name: build R with DeepinV23 
+
+on: 
+    workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout code
+      run: git clone https://fallingstar@gitlink.org.cn/fallingstar/RwithDeepinV23
+    
+
+    - name: pack to DEB
+      run: |
+       cd RwithDeepinV23
+       bash ${{secrets.GITLINK_REPO}}.sh
+       
+    
+    - name: Archive production artifacts
+      uses: actions/upload-artifact@v2
+      with:
+        name: ${{secrets.GITLINK_REPO}}
+        path: RwithDeepinV23/

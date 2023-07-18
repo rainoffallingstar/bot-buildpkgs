@@ -1,0 +1,23 @@
+name: build easyconnect with DeepinV23 
+
+on: 
+    workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout code
+      run: wget -O origin.tar.gz ${{secrets.PODMAN_DL}}
+    
+
+    - name: pack to DEB
+      run: bash podman_pack.sh
+       
+    
+    - name: Archive production artifacts
+      uses: actions/upload-artifact@v2
+      with:
+        name: podman
+        path: podman-desktop.deb

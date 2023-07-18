@@ -1,0 +1,25 @@
+name: build easyconnect with DeepinV23 
+
+on: 
+    workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout code
+      run: wget ${{secrets.EASY_DL}}
+    
+
+    - name: pack to DEB
+      run: |
+       cd easyconnect-deepinV23
+       bash build.sh
+       
+    
+    - name: Archive production artifacts
+      uses: actions/upload-artifact@v2
+      with:
+        name: easyconnect
+        path: easyconnect-deepinV23/
