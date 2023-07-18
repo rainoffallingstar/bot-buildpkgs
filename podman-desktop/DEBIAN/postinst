@@ -1,0 +1,13 @@
+#!/bin/bash
+
+# 给沙箱赋权限
+chmod 4755 /opt/podman-desktop/chrome-sandbox
+chmod 4755 /opt/podman-desktop/chrome_crashpad_handler
+
+# 更新 desktop 数据库
+if hash update-desktop-database 2> /dev/null
+then
+    update-desktop-database
+fi
+
+# 懵仙兔兔

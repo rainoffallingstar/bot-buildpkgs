@@ -1,0 +1,10 @@
+[Desktop Entry]
+Name=Podman Desktop
+Comment=Podman Desktop - 用于在容器和 Kubernetes 上进行开发的图形工具
+Exec=podman-desktop
+Terminal=false
+StartupNotify=true
+Type=Application
+Icon=podman-desktop
+StartupWMClass=Podman Desktop
+Categories=Utility;

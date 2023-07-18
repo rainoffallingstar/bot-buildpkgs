@@ -1,0 +1,18 @@
+#!/bin/bash
+
+if [ "$1" = "purge" ]
+then
+    echo "清理用户配置文件"
+    for username in `ls /home`
+    do
+        if [ -d /home/$username/.config/Podman\ Desktop ]
+        then
+            echo /home/$username/.config/Podman\ Desktop
+            rm -rf /home/$username/.config/Podman\ Desktop
+        fi
+    done
+else
+    echo "非卸载，跳过清理"
+fi
+
+# 懵仙兔兔

@@ -1,0 +1,10 @@
+Package: podman-desktop
+Version: 1.2.0
+Installed-Size: 311162
+Maintainer: 懵仙兔兔 <acgm@qq.com>
+Architecture: amd64
+Homepage: https://github.com/containers/podman-desktop
+Priority: optional
+Depends: podman | docker
+Description: Podman Desktop
+  用于在容器和 Kubernetes 上进行开发的图形工具
