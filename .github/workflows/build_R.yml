@@ -15,11 +15,11 @@ jobs:
     - name: pack to DEB
       run: |
        cd RwithDeepinV23
-       bash ${{secrets.GITLINK_REPO}}.sh
+       bash R423build.sh
        
     
     - name: Archive production artifacts
       uses: actions/upload-artifact@v2
       with:
-        name: ${{secrets.GITLINK_REPO}}
+        name: R423build
         path: RwithDeepinV23/
