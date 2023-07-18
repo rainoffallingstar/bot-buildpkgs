@@ -12,7 +12,7 @@ jobs:
       run: git clone https://fallingstar@gitlink.org.cn/fallingstar/RwithDeepinV23
     
 
-    - name: pack to DEB
+    - name: pack R423
       run: |
        cd RwithDeepinV23
        bash R423build.sh
@@ -22,4 +22,16 @@ jobs:
       uses: actions/upload-artifact@v2
       with:
         name: R423build
-        path: RwithDeepinV23/
+        path: RwithDeepinV23/R-4.2.3.deb
+        
+    - name: pack R431
+      run: |
+       cd RwithDeepinV23
+       bash R431build.sh
+       
+    
+    - name: Archive production artifacts
+      uses: actions/upload-artifact@v2
+      with:
+        name: R423build
+        path: RwithDeepinV23/R-4.3.1.deb
