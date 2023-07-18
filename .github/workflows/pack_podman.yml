@@ -1,4 +1,4 @@
-name: build easyconnect with DeepinV23 
+name: build podman-desktop with DeepinV23 
 
 on: 
     workflow_dispatch:
